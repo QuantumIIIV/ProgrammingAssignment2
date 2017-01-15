@@ -4,13 +4,13 @@
 ## This is a function identical to one poseted on the Programming Assignment 2: Lexical Scoping
 ## I changed a few item and rplaced with Inv
 makeCacheMatrix <- function(x = matrix()) {
-        Inv <- NULL
-        set <- function (y){
+        Inv <- NULL                     #Reset the content
+        set <- function (y){            #Define the function "set"
                 x <<- y
                 Inv <<- NULL
         }
-        
-        get <- function () x
+                
+        get <- function () x            # Define function "get"
         setinv <- function (Inverse1) Inv <<- Inverse1
         getinv <- function() Inv
         
@@ -28,7 +28,7 @@ cacheSolve <- function(x, ...) {
                 return (Inv)
         }
         data <- x$get()
-        Inv <- solve(data, ...)
+        Inv <- solve(data, ...)                 #Calcualte the inverse of a diagonal Matrix
         x$setinv(Inv)    
         Inv
 }
